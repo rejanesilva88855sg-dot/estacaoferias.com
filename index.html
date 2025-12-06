@@ -76,6 +76,7 @@
             text-decoration: none;
             border-radius: 8px;
             font-weight: 700;
+            cursor: pointer; /* Adicionado para indicar que é clicável */
             transition: background-color 0.3s;
         }
 
@@ -111,7 +112,7 @@
             width: 40px;
             height: 40px;
             margin-right: 10px;
-            border-radius: 50%; /* Para o logo parecer mais limpo */
+            border-radius: 50%;
         }
 
         nav a {
@@ -142,7 +143,6 @@
 
         /* 2. SEÇÃO PRINCIPAL (HERO) */
         .hero-section {
-            /* Usando uma imagem genérica inspiradora */
             background: url('https://images.unsplash.com/photo-1544005183-500b65053cc7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center/cover;
             height: 600px;
             display: flex;
@@ -159,7 +159,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.5); /* Overlay escuro */
+            background: rgba(0, 0, 0, 0.5); 
             z-index: 1;
         }
 
@@ -402,6 +402,81 @@
             line-height: 1.6;
         }
 
+        /* CORREÇÃO DO E-MAIL NO RODAPÉ: APLICA NEGRITO */
+        .footer-col p a {
+            color: #fff; /* Garante que o link seja visível */
+            font-weight: 600; /* Aplica o negrito */
+            text-decoration: none;
+        }
+
+        /* POP-UP (MODAL) STYLES */
+        .modal {
+            display: none; /* Escondido por padrão */
+            position: fixed;
+            z-index: 1001; /* Fica acima de tudo */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.7); /* Fundo escuro */
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 10% auto; /* Centraliza verticalmente */
+            padding: 30px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 500px;
+            text-align: center;
+            animation-name: animatetop;
+            animation-duration: 0.4s
+        }
+
+        .modal-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+
+        .modal-content p {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .modal-content a {
+            display: block;
+            margin: 10px 0;
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .close-btn {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .close-btn:hover,
+        .close-btn:focus {
+            color: #333;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Animação para o modal */
+        @keyframes animatetop {
+            from {top: -300px; opacity: 0}
+            to {top: 0; opacity: 1}
+        }
+
         /* RESPONSIVIDADE (Ajustes para telas menores) */
         @media (max-width: 900px) {
             .header-content {
@@ -447,6 +522,11 @@
                 min-width: 100%;
                 margin-bottom: 20px;
             }
+            
+            .modal-content {
+                margin: 20% auto;
+                width: 90%;
+            }
         }
     </style>
 </head>
@@ -483,7 +563,7 @@
 
     <section id="vantagens" class="advantages-section">
         <div class="container">
-            <h2>Por que escolher a **Estação Férias**?</h2>
+            <h2>Por que escolher a Estação Férias?</h2>
             <div class="advantages-grid">
                 <div class="advantage-card">
                     <i class="fas fa-route"></i>
@@ -542,7 +622,7 @@
                 <p>"A Estação Férias superou minhas expectativas! O pacote foi impecável e o suporte foi essencial. Minha melhor viagem!"</p>
                 <p class="author">- Maria S., cliente em 2024.</p>
             </div>
-            <a href="#" class="btn-primary">Planeje a Sua Viagem Também</a>
+            <button class="btn-primary" onclick="openModal()">Planeje a Sua Viagem Também</button>
         </div>
     </section>
 
@@ -550,7 +630,7 @@
         <div class="container">
             <h2>Não Perca Mais Tempo!</h2>
             <p>As melhores ofertas expiram rápido. Garanta hoje o seu lugar no próximo destino e comece a contagem regressiva para as férias dos sonhos.</p>
-            <a href="#" class="btn-big">GARANTA SEU PACOTE AQUI!</a>
+            <button class="btn-big" id="openModalBtn">GARANTA SEU PACOTE AQUI!</button>
         </div>
     </section>
 
@@ -571,8 +651,8 @@
             </div>
             <div class="footer-col">
                 <h3>Contato e Suporte</h3>
-                <p>E-mail Profissional: **contato@estacaoferias.com**</p>
-                <p>SAC: **sac@estacaoferias.com**</p>
+                <p>E-mail Profissional: <a href="mailto:contato@estacaoferias.com">contato@estacaoferias.com</a></p>
+                <p>SAC: <a href="mailto:sac@estacaoferias.com">sac@estacaoferias.com</a></p>
             </div>
             <div class="footer-col">
                 <h3>Endereço</h3>
@@ -580,6 +660,50 @@
             </div>
         </div>
     </footer>
+
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <i class="fas fa-paper-plane" style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 20px;"></i>
+            <h3>Pronto Para Viajar?</h3>
+            <p>Para garantir seu pacote exclusivo, entre em contato diretamente com nossa equipe:</p>
+            <p>E-mail Profissional:</p>
+            <a href="mailto:contato@estacaoferias.com">contato@estacaoferias.com</a>
+            <p>SAC (Suporte ao Cliente):</p>
+            <a href="mailto:sac@estacaoferias.com">sac@estacaoferias.com</a>
+        </div>
+    </div>
+
+    <script>
+        // JAVASCRIPT PARA FUNCIONALIDADE DO POP-UP
+        
+        var modal = document.getElementById("contactModal");
+        var btn = document.getElementById("openModalBtn");
+        var span = document.getElementsByClassName("close-btn")[0];
+
+        // Função para abrir o modal
+        function openModal() {
+            modal.style.display = "block";
+        }
+        
+        // Atribui a função de abrir o modal ao botão principal
+        btn.onclick = openModal;
+        
+        // Fecha o modal ao clicar no 'x'
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // Fecha o modal ao clicar fora dele
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        // Funções de abertura de modal podem ser associadas a outros botões, como o da seção de testemunhos
+        document.querySelector('.testimonials-section .btn-primary').onclick = openModal;
+
+    </script>
 
 </body>
 </html>
