@@ -3,37 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PSN Cards | Loja Virtual de Gift Cards - PIX Checkout</title>
-    <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/0/00/PlayStation_logo.svg">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Estação Férias - Sua Próxima Grande Aventura</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <style>
-        /* Variáveis de Cores (Ajustadas para o tema PSN) */
+        /* CSS EMBUTIDO A PARTIR DAQUI */
+        
+        /* GERAIS E VARIÁVEIS */
         :root {
-            --primary-color: #0070D1; /* Azul PlayStation */
-            --secondary-color: #FF3300; /* Laranja/Vermelho Destacado */
-            --accent-color: #27ae60; /* Verde para PIX/Sucesso */
-            --warning-color: #f39c12; /* Amarelo para Pendente */
-            --background-color: #121212; /* Fundo Escuro */
-            --card-bg: #1c1c1c; /* Fundo dos Cards */
-            --header-bg: #000000; /* NOVO: Preto para o cabeçalho */
-            --text-color: #f8f8f8; /* Texto Claro */
-            --shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+            --primary-color: #007BFF; /* Azul Principal */
+            --secondary-color: #FFC107; /* Amarelo Secundário */
+            --text-dark: #333;
+            --text-light: #f4f4f4;
+            --background-light: #fff;
+            --background-gray: #f9f9f9;
         }
 
-        /* Estilos Gerais */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--background-color);
+            font-family: 'Poppins', sans-serif;
         }
 
         .container {
@@ -42,751 +33,553 @@
             padding: 0 20px;
         }
 
-        h1, h2, h3 {
-            font-weight: 800;
-            margin-bottom: 15px;
-            color: var(--text-color);
-        }
-
-        /* Animação Pulse */
-        @keyframes pulse-green {
-            0% { box-shadow: 0 0 0 0 rgba(39, 174, 96, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(39, 174, 96, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(39, 174, 96, 0); }
-        }
-
-        /* Botões */
-        .btn {
-            display: inline-block;
-            padding: 18px 35px; 
+        /* BOTÕES */
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 12px 25px;
             border: none;
-            border-radius: 50px; 
-            font-weight: 900; 
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            font-size: 1.1em;
-        }
-
-        /* Botão COMPRAR AGORA (Para os cards) */
-        .btn-buy {
-            background-color: var(--secondary-color);
-            color: var(--light-text);
-            padding: 12px 20px;
-            font-size: 0.9em;
             border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-            width: 100%;
-            margin-top: 15px;
-        }
-        .btn-buy:hover {
-            background-color: #cc2a00;
-            transform: translateY(-1px);
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s;
         }
 
-        /* Botão PAGAR AGORA (Verde Pulsante) */
-        .btn-pay-now {
-            background-color: var(--accent-color);
-            color: var(--light-text);
-            animation: pulse-green 2s infinite; 
-            width: 100%;
-            margin-top: 30px;
+        .btn-primary:hover {
+            background-color: #0056b3;
         }
 
-        .btn-pay-now:hover {
-            background-color: #219d54; 
-            transform: translateY(-2px);
-            animation: none;
+        .btn-secondary {
+            background-color: var(--secondary-color);
+            color: var(--text-dark);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            display: inline-block;
         }
 
-        /* Header */
-        .header {
-            background-color: var(--header-bg); /* PRETO */
-            box-shadow: var(--shadow);
+        .btn-secondary:hover {
+            background-color: #e0a800;
+        }
+
+        .btn-big {
+            font-size: 1.5rem;
+            padding: 18px 40px;
+            margin-top: 20px;
+            background-color: #28a745; /* Verde de destaque */
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 700;
+            transition: background-color 0.3s;
+        }
+
+        .btn-big:hover {
+            background-color: #1e7e34;
+        }
+
+        /* 1. CABEÇALHO (HEADER) */
+        header {
+            background-color: var(--background-light);
+            border-bottom: 1px solid #eee;
             padding: 15px 0;
             position: sticky;
             top: 0;
-            z-index: 50;
-            border-bottom: 2px solid var(--primary-color);
+            z-index: 1000;
         }
 
-        .header .container {
+        .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        /* ESTILO DA LOGO */
-        .logo img {
-            height: 60px; /* Tamanho do logo */
-            width: auto;
-            vertical-align: middle;
-        }
-
-        .nav a {
-            text-decoration: none;
-            color: var(--text-color);
-            margin-left: 30px;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-
-        .nav a:hover {
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 700;
             color: var(--primary-color);
         }
 
-        /* Seção de Produtos (Shop) */
-        .shop-section {
+        .logo img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            border-radius: 50%; /* Para o logo parecer mais limpo */
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            margin-left: 25px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .cta-header {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.3s;
+        }
+
+        .cta-header:hover {
+            opacity: 0.9;
+        }
+
+        /* 2. SEÇÃO PRINCIPAL (HERO) */
+        .hero-section {
+            /* Usando uma imagem genérica inspiradora */
+            background: url('https://images.unsplash.com/photo-1544005183-500b65053cc7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center/cover;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            color: var(--text-light);
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5); /* Overlay escuro */
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+        }
+
+        .search-form {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            max-width: 900px;
+            margin: 0 auto;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .search-form input {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            flex-grow: 1;
+            min-width: 150px;
+        }
+
+        /* 3. SEÇÃO VANTAGENS */
+        .advantages-section {
+            padding: 60px 0;
+            text-align: center;
+            background-color: var(--background-gray);
+        }
+
+        .advantages-section h2 {
+            font-size: 2rem;
+            color: var(--text-dark);
+            margin-bottom: 40px;
+        }
+
+        .advantages-grid {
+            display: flex;
+            justify-content: space-around;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .advantage-card {
+            background: var(--background-light);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            flex-basis: 30%;
+            min-width: 250px;
+        }
+
+        .advantage-card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .advantage-card h3 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        /* 4. GALERIA DE PRODUTOS */
+        .products-section {
             padding: 60px 0;
             text-align: center;
         }
 
-        .shop-section h2 {
-            color: var(--primary-color);
-            font-size: 3em;
-            margin-bottom: 20px;
-            font-weight: 900;
+        .products-section h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: var(--text-dark);
         }
-        
-        .shop-section p {
-            font-size: 1.2em;
+
+        .products-section .subtitle {
             margin-bottom: 40px;
-            color: #ccc;
+            color: #666;
+            font-size: 1.1rem;
         }
 
         .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            display: flex;
             gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         .product-card {
-            background-color: var(--card-bg);
+            background: var(--background-light);
             border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-            padding: 20px;
-            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            flex-basis: calc(33.333% - 20px);
+            overflow: hidden;
+            text-align: left;
             transition: transform 0.3s;
         }
 
         .product-card:hover {
-            transform: translateY(-8px);
-            border: 1px solid var(--primary-color);
+            transform: translateY(-5px);
         }
 
         .product-card img {
             width: 100%;
-            height: auto;
-            max-height: 180px;
+            height: 200px;
             object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 15px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
         }
 
         .product-card h3 {
-            color: var(--text-color);
-            font-size: 1.3em;
-            margin-bottom: 5px;
+            padding: 15px 20px 5px;
+            color: var(--primary-color);
         }
 
-        .product-card .price {
-            font-size: 1.8em;
-            font-weight: 900;
-            color: var(--accent-color);
+        .product-card p {
+            padding: 0 20px 15px;
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        .product-card .btn-secondary {
+            display: block;
+            text-align: center;
+            margin: 0 20px 20px;
+        }
+
+        /* 5. SEÇÃO DE TESTEMUNHOS */
+        .testimonials-section {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .testimonials-section h2 {
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+
+        .testimonial-box {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-style: italic;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        .testimonial-box i {
+            font-size: 2rem;
             margin-bottom: 10px;
         }
 
-        /* Footer */
-        .footer {
-            background-color: var(--card-bg);
-            color: #aaa;
-            padding: 30px 0;
-            font-size: 0.9em;
-            border-top: 1px solid #333;
+        .testimonial-box p {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
         }
-        
-        .footer .container {
+
+        .testimonial-box .author {
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        /* 6. CHAMADA FINAL PARA AÇÃO */
+        .final-cta {
+            padding: 80px 0;
+            text-align: center;
+            background-color: var(--background-gray);
+        }
+
+        .final-cta h2 {
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+
+        .final-cta p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        /* 7. RODAPÉ (FOOTER) */
+        footer {
+            background-color: #222;
+            color: var(--text-light);
+            padding: 40px 0;
+            font-size: 0.9rem;
+        }
+
+        .footer-grid {
             display: flex;
             justify-content: space-between;
+            gap: 30px;
             flex-wrap: wrap;
-            text-align: left;
         }
-        
+
         .footer-col {
-            width: 30%;
+            flex-basis: 25%;
             min-width: 200px;
+        }
+
+        .footer-col h3 {
+            color: var(--secondary-color);
             margin-bottom: 15px;
+            font-size: 1.1rem;
         }
-        
-        .footer h4 {
-            color: var(--primary-color);
-            font-weight: 700;
-            margin-bottom: 10px;
-            font-size: 1em;
+
+        .footer-col ul {
+            list-style: none;
         }
-        
-        .footer p, .footer a {
-            color: #777;
+
+        .footer-col ul li a {
+            color: #ccc;
             text-decoration: none;
-            display: block;
-            margin-bottom: 5px;
-        }
-        
-        .footer a:hover {
-            color: var(--primary-color);
-        }
-
-        .footer-bottom {
-            width: 100%;
-            border-top: 1px solid #333;
-            padding-top: 15px;
-            margin-top: 15px;
-            text-align: center;
-            color: #555;
-        }
-
-        /* ======================================
-        MODAIS (POP-UPS) - REUTILIZADO
-        ======================================
-        */
-        .modal {
-            display: none; 
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.85);
-        }
-
-        .modal-content {
-            background-color: #2a2a2a; /* Fundo Escuro do Modal */
-            margin: 5% auto; 
-            padding: 30px 40px;
-            border-radius: 15px;
-            width: 95%; 
-            max-width: 550px; 
-            position: relative;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
-            color: var(--text-color);
-        }
-
-        .close-btn {
-            color: #aaa;
-            float: right;
-            font-size: 32px;
-            font-weight: bold;
+            line-height: 1.8;
             transition: color 0.3s;
         }
 
-        .close-btn:hover,
-        .close-btn:focus {
+        .footer-col ul li a:hover {
             color: var(--primary-color);
-            text-decoration: none;
-            cursor: pointer;
         }
 
-        /* Checkout (Endereço) */
-        .checkout-header {
-            border-bottom: 3px solid var(--secondary-color);
-            padding-bottom: 15px;
-            margin-bottom: 20px;
+        .footer-col p {
+            line-height: 1.6;
         }
 
-        .checkout-header h3 {
-            color: var(--text-color);
-            font-weight: 900;
-        }
-
-        .checkout-summary {
-            background-color: #333; 
-            border-radius: 8px;
-            padding: 15px;
-            margin-bottom: 25px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-left: 5px solid var(--primary-color);
-        }
-
-        .checkout-summary strong {
-            font-size: 1.1em;
-            color: var(--primary-color);
-            font-weight: 700;
-        }
-        .checkout-summary .price {
-            font-size: 2.2em;
-            font-weight: 900;
-            color: var(--secondary-color);
-        }
-        
-        #address-form label {
-            display: block;
-            margin-top: 10px;
-            font-weight: 700;
-            font-size: 0.9em;
-            color: #ccc;
-        }
-
-        #address-form input, #address-form select {
-            width: 100%;
-            padding: 12px;
-            margin-top: 5px;
-            margin-bottom: 15px;
-            border: 1px solid #444;
-            border-radius: 8px;
-            background-color: #1c1c1c;
-            color: var(--text-color);
-            transition: border-color 0.3s;
-        }
-        #address-form input:focus, #address-form select:focus {
-            border-color: var(--primary-color);
-            outline: none;
-        }
-        
-        /* Ocultar o select de produto no checkout, pois é fixo por produto */
-        #product-select-group {
-            display: none;
-        }
-
-        /* Estilo elegante para a opção de pagamento PIX */
-        .payment-option-pix {
-            background-color: #3c3c3c; 
-            border: 1px solid #555;
-            padding: 10px;
-            border-radius: 8px;
-            margin-bottom: 15px;
-            text-align: center;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            color: var(--accent-color);
-        }
-        .payment-option-pix img {
-            height: 25px;
-            width: auto;
-        }
-
-
-        /* Info PIX Modal (Pagamento) */
-        .pix-modal-content {
-            text-align: center;
-        }
-
-        .pix-modal-content h3 {
-            color: var(--accent-color);
-            font-size: 2em;
-        }
-
-        .countdown-timer {
-            background-color: #333;
-            color: var(--text-color);
-            padding: 10px;
-            border-radius: 8px;
-            margin: 20px 0;
-            font-size: 1.6em;
-            font-weight: 700;
-        }
-        .countdown-timer i {
-            margin-right: 10px;
-            color: var(--secondary-color);
-        }
-
-        .pix-details {
-            border: 2px solid var(--accent-color);
-            padding: 25px;
-            border-radius: 12px;
-            background-color: #1c1c1c;
-            margin-bottom: 20px;
-        }
-
-        .pix-details .pix-icon {
-            width: 100px;
-            margin-bottom: 20px;
-        }
-
-        .pix-key-group {
-            background-color: #2c2c2c;
-            padding: 10px;
-            border-radius: 5px;
-            margin: 15px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .pix-key-group span {
-            font-weight: 700;
-            color: var(--accent-color);
-            font-size: 1.1em;
-        }
-        .copy-btn {
-            background-color: var(--primary-color);
-            color: var(--light-text);
-            border: none;
-            padding: 8px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 0.9em;
-            font-weight: 600;
-            transition: background-color 0.3s;
-        }
-        
-        .copy-btn:hover {
-            background-color: #005bb5;
-        }
-
-        .titular-info {
-            font-size: 0.9em;
-            color: #aaa;
-            margin-top: 10px;
-        }
-
-        .strong-name {
-            font-weight: 900 !important; 
-            color: var(--secondary-color); 
-        }
-        
-        .pending-message {
-            text-align: center;
-            padding: 15px;
-            background-color: #333; 
-            color: var(--warning-color);
-            border: 1px solid var(--warning-color);
-            border-radius: 5px;
-            margin-bottom: 20px;
-            font-weight: 600;
-            display: none; 
-        }
-
-        /* Responsividade */
-        @media (max-width: 768px) {
-            .products-grid {
-                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            }
-             .footer-col {
-                width: 100%;
-                min-width: 100%;
+        /* RESPONSIVIDADE (Ajustes para telas menores) */
+        @media (max-width: 900px) {
+            .header-content {
+                flex-direction: column;
                 text-align: center;
             }
-            .footer .container {
-                justify-content: center;
+
+            nav {
+                margin: 10px 0;
+            }
+
+            nav a {
+                margin: 0 10px;
+            }
+
+            .cta-header {
+                display: none;
+            }
+
+            .search-form {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .advantages-grid, .products-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .advantage-card, .product-card {
+                flex-basis: 90%;
+            }
+            
+            .footer-grid {
+                flex-direction: column;
+            }
+
+            .footer-col {
+                min-width: 100%;
+                margin-bottom: 20px;
             }
         }
     </style>
 </head>
 <body>
 
-    <header class="header">
-        <div class="container">
+    <header>
+        <div class="container header-content">
             <div class="logo">
-                <img src="https://static.wixstatic.com/media/3be646_6d4e945d0ef046b5a0249548193b8d90~mv2.png/v1/crop/x_600,y_0,w_2400,h_2400/fill/w_111,h_111,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/flash1.png" alt="PSN Gift Cards Logo">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2qY-9G3XiJM-HztNC1wwJXq1L_LrV6i43Rg&s" alt="Logo Estação Férias">
+                <span>Estação Férias</span>
             </div>
-            <nav class="nav">
-                <a href="#shop" class="nav-item">Loja</a>
-                <a href="#" class="nav-item">Ajuda</a>
+            <nav>
+                <a href="#hero">Início</a>
+                <a href="#pacotes">Pacotes</a>
+                <a href="#vantagens">Vantagens</a>
+                <a href="#contato">Contato</a>
             </nav>
+            <a href="#" class="cta-header">Encontre Sua Viagem Perfeita!</a>
         </div>
     </header>
 
-    <section class="shop-section" style="padding-top: 100px;">
-        <div class="container">
-            <h2>RECARREGUE SUA PSN!</h2>
-            <p>Os melhores preços em Gift Cards para comprar jogos, DLCs e assinaturas na PlayStation Store.</p>
+    <section id="hero" class="hero-section">
+        <div class="container hero-content">
+            <h1>SUA PRÓXIMA GRANDE AVENTURA COMEÇA AQUI.</h1>
+            <p>Pacotes de viagem exclusivos, cuidadosamente elaborados para você explorar o mundo com conforto e segurança.</p>
+            <form class="search-form">
+                <input type="text" placeholder="Destino (País/Cidade)">
+                <input type="date">
+                <input type="number" placeholder="Nº de Viajantes">
+                <button type="submit" class="btn-primary">PESQUISAR AGORA</button>
+            </form>
         </div>
     </section>
 
-    <section id="shop" class="shop-section" style="padding-top: 0;">
+    <section id="vantagens" class="advantages-section">
         <div class="container">
-            <div class="products-grid" id="products-container">
+            <h2>Por que escolher a **Estação Férias**?</h2>
+            <div class="advantages-grid">
+                <div class="advantage-card">
+                    <i class="fas fa-route"></i>
+                    <h3>Pacotes Flexíveis</h3>
+                    <p>Adapte sua viagem ao seu ritmo e bolso, com opções personalizadas.</p>
                 </div>
+                <div class="advantage-card">
+                    <i class="fas fa-headset"></i>
+                    <h3>Suporte 24h</h3>
+                    <p>Atendimento dedicado antes, durante e depois da viagem.</p>
+                </div>
+                <div class="advantage-card">
+                    <i class="fas fa-tags"></i>
+                    <h3>Melhores Preços</h3>
+                    <p>Garantia de ofertas exclusivas e sem surpresas.</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <footer class="footer">
+    <section id="pacotes" class="products-section">
         <div class="container">
+            <h2>Explore Nossos Meios de Transporte e Destinos</h2>
+            <p class="subtitle">O meio de transporte ideal para a sua jornada, com o conforto que você merece.</p>
+
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="https://cdn-pen.nuneshost.com/images/220824-msc-cruzeiro-Seascape.jpg" alt="Navio de Cruzeiro">
+                    <h3>Cruzeiros Inesquecíveis</h3>
+                    <p>Sinta a brisa do mar e descubra novos horizontes a bordo dos melhores transatlânticos. Lazer e gastronomia de luxo.</p>
+                    <a href="#" class="btn-secondary">Ver Pacotes</a>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://airportinfraexpo.com.br/wp-content/uploads/2024/08/historia-aviao.jpg" alt="Avião em voo">
+                    <h3>Voos para o Mundo</h3>
+                    <p>Chegue rapidamente e com segurança aos destinos mais longínquos. Conexões facilitadas e conforto aéreo superior.</p>
+                    <a href="#" class="btn-secondary">Ver Pacotes</a>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://assets.volvo.com/is/image/VolvoInformationTechnologyAB/1860x1050-image-press-releases-onibus-cidade-alta?wid=1400&fit=constrain" alt="Ônibus de Viagem">
+                    <h3>Viagens Rodoviárias</h3>
+                    <p>Desfrute da paisagem com conforto e economia. Perfeito para explorar as belezas nacionais e da América do Sul.</p>
+                    <a href="#" class="btn-secondary">Ver Pacotes</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials-section">
+        <div class="container">
+            <h2>O Que Nossos Viajantes Dizem</h2>
+            <div class="testimonial-box">
+                <i class="fas fa-quote-left"></i>
+                <p>"A Estação Férias superou minhas expectativas! O pacote foi impecável e o suporte foi essencial. Minha melhor viagem!"</p>
+                <p class="author">- Maria S., cliente em 2024.</p>
+            </div>
+            <a href="#" class="btn-primary">Planeje a Sua Viagem Também</a>
+        </div>
+    </section>
+
+    <section class="final-cta">
+        <div class="container">
+            <h2>Não Perca Mais Tempo!</h2>
+            <p>As melhores ofertas expiram rápido. Garanta hoje o seu lugar no próximo destino e comece a contagem regressiva para as férias dos sonhos.</p>
+            <a href="#" class="btn-big">GARANTA SEU PACOTE AQUI!</a>
+        </div>
+    </section>
+
+    <footer id="contato">
+        <div class="container footer-grid">
             <div class="footer-col">
-                <h4>Atendimento</h4>
-                <p>24/7 - Entrega Imediata (Código Digital)</p>
-                <p>Roraima - Boa Vista, BR</p>
+                <h3>Estação Férias</h3>
+                <p>&copy; 2025 Todos os direitos reservados.</p>
             </div>
             <div class="footer-col">
-                <h4>Fale Conosco</h4>
-                <p><i class="fas fa-phone-alt"></i> (85) 99212-9136</p>
-                <p><i class="fas fa-envelope"></i> contato@flashgamesp.com.br/</p>
+                <h3>Links Úteis</h3>
+                <ul>
+                    <li><a href="#">Sobre Nós</a></li>
+                    <li><a href="#">Termos de Serviço</a></li>
+                    <li><a href="#">Política de Privacidade</a></li>
+                    <li><a href="#">Trabalhe Conosco</a></li>
+                </ul>
             </div>
             <div class="footer-col">
-                <h4>Informações</h4>
-                <p>CNPJ: 29.822.940/0001-48</p>
-                <a href="#">Termos de Compra</a>
+                <h3>Contato e Suporte</h3>
+                <p>E-mail Profissional: **contato@estacaoferias.com**</p>
+                <p>SAC: **sac@estacaoferias.com**</p>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 PSN Gift Cards. Todos os direitos reservados. Não afiliado à Sony Interactive Entertainment.</p>
+            <div class="footer-col">
+                <h3>Endereço</h3>
+                <p>Av. Brig. Faria Lima, 2232 - Jardim Paulistano, São Paulo - SP, 01451-000</p>
             </div>
         </div>
     </footer>
 
-
-    <div id="address-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <div class="checkout-header">
-                <h3><i class="fas fa-credit-card"></i> Finalize Sua Compra Digital</h3>
-            </div>
-            
-            <div class="checkout-summary">
-                <div>
-                    <strong>Produto:</strong> <span id="product-name-display">PSN Card R$ 50</span><br>
-                    <span>Código Enviado por E-mail</span>
-                </div>
-                <div class="price" id="display-price">R$ 50,00</div>
-            </div>
-
-            <form id="address-form">
-                
-                <div id="product-select-group">
-                    <label for="product-select">Produto Selecionado</label>
-                    <select id="product-select" required>
-                        <option value="50.00">PSN Card R$ 50</option>
-                    </select>
-                </div>
-                
-                <label for="nome">Nome Completo</label>
-                <input type="text" id="nome" required>
-
-                <label for="telefone">Telefone (Para Contato)</label>
-                <input type="tel" id="telefone" placeholder="(95) 99999-9999" required>
-
-                <label for="email">Email para Envio do Código</label>
-                <input type="email" id="email" placeholder="seuemail@exemplo.com" required>
-
-                <label for="cep">CEP <span style="font-size: 0.8em; color: var(--primary-color);">(Apenas para registro/segurança)</span></label>
-                <input type="text" id="cep" pattern="\d{8}" placeholder="Ex: 69301000 (apenas números)" required maxlength="8">
-
-                <div class="payment-option-pix">
-                    <img src="https://www.advocacianunes.com.br/wp-content/uploads/2022/04/logo-pix-icone-1024.png" alt="Ícone PIX"> PIX
-                </div>
-
-                <button type="submit" class="btn btn-pay-now">
-                    PAGAR AGORA <i class="fas fa-arrow-right"></i>
-                </button>
-            </form>
-        </div>
-    </div>
-
-    <div id="pix-modal" class="modal">
-        <div class="modal-content pix-modal-content">
-            <span class="close-btn">&times;</span>
-            <h3><i class="fas fa-check-circle"></i> Pagamento PIX Gerado!</h3>
-            <p>Seu código será enviado assim que o pagamento for confirmado.</p>
-            
-            <div class="countdown-timer">
-                <i class="fas fa-hourglass-half"></i> Tempo restante: <span id="countdown">10:00</span>
-            </div>
-
-            <div class="pix-details">
-                <img src="https://www.advocacianunes.com.br/wp-content/uploads/2022/04/logo-pix-icone-1024.png" alt="Ícone PIX" class="pix-icon">
-                
-                <p><strong>VALOR A PAGAR:</strong> <span style="font-size: 1.8em; color: var(--secondary-color);" id="pix-value-display">R$ 50,00</span></p>
-                <p><strong>Tipo de Chave:</strong> CPF</p>
-                
-                <div class="pix-key-group">
-                    <span id="pix-key-display">081.904.013-43</span> 
-                    <button class="copy-btn" data-copy="08190401343"><i class="fas fa-copy"></i> Copiar Chave</button>
-                </div>
-
-                <p class="titular-info">
-                    **Titular para Confirmação:** <strong class="strong-name">Brenda do Nascimento Silveira</strong>
-                </p>
-            </div>
-
-            <div class="pending-message">
-                ⚠️ **Pedido Registrado!** O pagamento está **PENDENTE**. Seu código será enviado por email **SOMENTE APÓS** a confirmação do PIX.
-            </div>
-
-            <button id="close-pix-btn" class="btn" style="background-color: var(--primary-color);">
-                <i class="fas fa-times"></i> Fechar
-            </button>
-        </div>
-    </div>
-
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const productData = [
-                { value: 15.00, price: 15.00, name: "PSN Card R$ 15" },
-                { value: 30.00, price: 30.00, name: "PSN Card R$ 30" },
-                { value: 50.00, price: 50.00, name: "PSN Card R$ 50" },
-                { value: 60.00, price: 60.00, name: "PSN Card R$ 60" },
-                { value: 100.00, price: 98.00, name: "PSN Card R$ 100" }, // Desconto
-                { value: 120.00, price: 118.00, name: "PSN Card R$ 120" }, // Desconto
-                { value: 150.00, price: 145.00, name: "PSN Card R$ 150" }, // Desconto
-                { value: 200.00, price: 195.00, name: "PSN Card R$ 200" }, // Desconto
-                { value: 250.00, price: 240.00, name: "PSN Card R$ 250" }, // Desconto
-                { value: 300.00, price: 290.00, name: "PSN Card R$ 300" }  // Desconto
-            ];
-
-            const productsContainer = document.getElementById('products-container');
-            const addressModal = document.getElementById('address-modal');
-            const pixModal = document.getElementById('pix-modal');
-            const addressForm = document.getElementById('address-form');
-            const closeModalBtns = document.querySelectorAll('.close-btn');
-            const copyBtn = document.querySelector('.copy-btn');
-            const pendingMessage = document.querySelector('.pending-message'); 
-            const closePixBtn = document.getElementById('close-pix-btn');
-            const countdownDisplay = document.getElementById('countdown');
-            const cepInput = document.getElementById('cep');
-            const displayPrice = document.getElementById('display-price');
-            const pixValueDisplay = document.getElementById('pix-value-display');
-            const productNameDisplay = document.getElementById('product-name-display');
-            const productSelect = document.getElementById('product-select');
-            
-            let currentProduct = {};
-            let countdownInterval;
-
-            // Função para formatar o preço
-            const formatPrice = (price) => {
-                return `R$ ${parseFloat(price).toFixed(2).replace('.', ',')}`;
-            };
-
-            // 1. Geração Dinâmica dos Cards
-            productData.forEach(product => {
-                const card = document.createElement('div');
-                card.className = 'product-card';
-                card.innerHTML = `
-                    <img src="https://cdn.awsli.com.br/2500x2500/2430/2430819/produto/234443245/psn-530-6hzaxry7ix.jpg" alt="${product.name}">
-                    <h3>${product.name}</h3>
-                    <p class="price">${formatPrice(product.price)}</p>
-                    <button class="btn-buy" data-value="${product.value}" data-price="${product.price}" data-name="${product.name}">
-                        COMPRAR AGORA <i class="fas fa-gamepad"></i>
-                    </button>
-                `;
-                productsContainer.appendChild(card);
-            });
-
-            // 2. Ação de Compra (Abre o Checkout)
-            productsContainer.addEventListener('click', function(event) {
-                if (event.target.classList.contains('btn-buy')) {
-                    const btn = event.target;
-                    
-                    currentProduct = {
-                        value: parseFloat(btn.dataset.value),
-                        price: parseFloat(btn.dataset.price),
-                        name: btn.dataset.name
-                    };
-
-                    // Atualiza o display do modal de checkout
-                    displayPrice.textContent = formatPrice(currentProduct.price);
-                    productNameDisplay.textContent = currentProduct.name;
-                    
-                    // Atualiza o valor do select (necessário para o JS do checkout)
-                    productSelect.innerHTML = `<option value="${currentProduct.price}" selected>${currentProduct.name}</option>`;
-                    
-                    addressModal.style.display = 'block';
-                    document.body.style.overflow = 'hidden';
-                }
-            });
-
-
-            // 3. Fechar Modais (Geral)
-            const closeModals = () => {
-                addressModal.style.display = 'none';
-                pixModal.style.display = 'none';
-                document.body.style.overflow = 'auto'; 
-                if (countdownInterval) {
-                    clearInterval(countdownInterval);
-                }
-            };
-
-            closeModalBtns.forEach(btn => btn.addEventListener('click', closeModals));
-            closePixBtn.addEventListener('click', closeModals);
-
-            window.addEventListener('click', function(event) {
-                if (event.target === addressModal || event.target === pixModal) {
-                    closeModals();
-                }
-            });
-
-
-            // 4. Submissão do Formulário de Endereço -> Abre PIX
-            addressForm.addEventListener('submit', function(event) {
-                event.preventDefault();
-
-                // Atualiza o display do PIX com o preço correto
-                pixValueDisplay.textContent = formatPrice(currentProduct.price);
-
-                addressModal.style.display = 'none';
-                pixModal.style.display = 'block';
-                pendingMessage.style.display = 'none'; 
-                document.body.style.overflow = 'hidden';
-                
-                startCountdown(10 * 60); // 10 minutos
-            });
-            
-            // 5. Contagem Regressiva para PIX
-            function startCountdown(duration) {
-                let timer = duration;
-                let minutes, seconds;
-
-                if (countdownInterval) {
-                    clearInterval(countdownInterval);
-                }
-
-                countdownInterval = setInterval(function () {
-                    minutes = parseInt(timer / 60, 10);
-                    seconds = parseInt(timer % 60, 10);
-
-                    minutes = minutes < 10 ? "0" + minutes : minutes;
-                    seconds = seconds < 10 ? "0" + seconds : seconds;
-
-                    countdownDisplay.textContent = minutes + ":" + seconds;
-
-                    if (--timer < 0) {
-                        clearInterval(countdownInterval);
-                        countdownDisplay.textContent = "EXPIRADO!";
-                        alert("O prazo para pagamento PIX expirou. Refaça o pedido.");
-                        closeModals();
-                    }
-                }, 1000);
-            }
-
-            // 6. Lógica de Cópia da Chave PIX
-            copyBtn.addEventListener('click', function() {
-                const pixKey = copyBtn.getAttribute('data-copy');
-                
-                navigator.clipboard.writeText(pixKey).then(function() {
-                    const originalText = copyBtn.innerHTML;
-                    copyBtn.innerHTML = '<i class="fas fa-check"></i> Copiado!';
-                    
-                    // Mostra a mensagem de pagamento PENDENTE após a cópia
-                    pendingMessage.style.display = 'block';
-
-                    setTimeout(function() {
-                        copyBtn.innerHTML = originalText;
-                    }, 2000);
-                }).catch(function(err) {
-                    console.error('Erro ao copiar: ', err);
-                    alert('Não foi possível copiar. Copie a chave PIX manualmente: 081.904.013-43');
-                });
-            });
-
-            // 7. Simulação de Preenchimento por CEP (Apenas para evitar erro de campo faltante)
-            cepInput.addEventListener('input', function() {
-                let cep = this.value.replace(/\D/g, ''); 
-                this.value = cep;
-            });
-            
-            // Corrige o preenchimento inicial dos selects do checkout (que foram ocultados)
-            productSelect.innerHTML = `<option value="50.00" selected>PSN Card R$ 50</option>`;
-            currentProduct = { price: 50.00, name: "PSN Card R$ 50" };
-
-        });
-    </script>
 </body>
 </html>
